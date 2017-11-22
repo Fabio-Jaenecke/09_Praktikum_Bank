@@ -2,7 +2,7 @@
 
 /**
  * Hier werden die Bankkonten erstellt.
- * Der Kontostand und das Kontolimit ist in Rappen gespeichert.
+ * Der Kontostand und das Kontolimit sind in Rappen gespeichert.
  * 
  * @author fabio jaenecke
  * @version 1.0
