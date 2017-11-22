@@ -1,4 +1,4 @@
-package bankverwaltung;
+
 import java.util.ArrayList;
 
 /**

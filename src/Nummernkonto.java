@@ -1,4 +1,4 @@
-package bankverwaltung;
+
 
 /**
  * @author fabio jaenecke

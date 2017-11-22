@@ -1,4 +1,4 @@
-package bankverwaltung;
+
 
 /**
  * Diese Klasse ermöglicht die Interaktion mit der Bankverwaltung und repräsentiert dadurch einen Bankschalter.

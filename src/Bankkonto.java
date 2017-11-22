@@ -1,4 +1,4 @@
-package bankverwaltung;
+
 
 /**
  * Hier werden die Bankkonten erstellt.
