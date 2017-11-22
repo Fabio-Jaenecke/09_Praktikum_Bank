@@ -37,8 +37,7 @@ public class TestSchalter {
 		bankverwaltung.bankkontenErstellen(konto8);
 		bankverwaltung.bankkontenErstellen(konto9);
 		
-		//Es finden dvierse transaktionen statt:
-		
+		//Es finden diverse transaktionen statt:
 		konto1.geldAbheben(20000.0);
 		konto2.geldAbheben(20002.0);
 		konto3.geldAbheben(20000.0);
@@ -50,7 +49,8 @@ public class TestSchalter {
 		konto8.geldEinzahlen(0.50);
 		konto9.geldEinzahlen(99998.5);
 		konto2.geldAbheben(1999.0);
-		//
+		
+		//Gibt die Kontodaten aus:
 		bankverwaltung.bankkontenAusgeben();
 	}
 
