@@ -2,4 +2,3 @@
 Code project used in the context of the PROG1 course.
 
 Wunderbare Teamarbeit zwischen Fabio Jaenecke und Daniel Lerch
-Fabio ist super. Meistens.
