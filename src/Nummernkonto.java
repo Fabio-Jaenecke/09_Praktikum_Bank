@@ -8,6 +8,16 @@
 public class Nummernkonto extends Bankkonto {
 	private static int kontonummern = 1000;
 	private int kontonummer;
+	
+	/**
+	 * @param kontoinhaber
+	 * @param kontostand
+	 */
+	public Nummernkonto(String kontoinhaber) {
+		super(kontoinhaber);
+		kontonummer = kontonummern;
+		kontonummern++;
+	}
 
 	/**
 	 * @param kontoinhaber

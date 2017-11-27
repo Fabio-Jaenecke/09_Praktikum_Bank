@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Diese Klasse verwaltet die Bankkonten
  * 
- * @author fabio jaenecke
+ * @author fabio jaenecke & daniellerch
  * @version 1.0
  *
  */
@@ -23,7 +23,7 @@ public class Bankverwaltung {
 	 * 
 	 * @param konto ein Bankkonto
 	 */
-	public void bankkontenErstellen(Bankkonto konto) {
+	public void bankkontenHinzufuegen(Bankkonto konto) {
 		bankkonten.add(konto);
 	}
 	
@@ -32,7 +32,7 @@ public class Bankverwaltung {
 	 */
 	public void bankkontenAusgeben() {
 		for (Bankkonto konto : bankkonten) {
-			System.out.println("Inhaber: " + konto.getInhaber() + ", Kontostand: " + konto.aendereZuFranken(konto.getKontostand()) + konto.ueberzugslimitAlsString());
+			System.out.println("Inhaber: " + konto.getInhaber() + ", Kontostand: " + konto.rappenZuFranken(konto.getKontostand()) + konto.ueberzugslimitAlsString());
 		} 
 	}
 }

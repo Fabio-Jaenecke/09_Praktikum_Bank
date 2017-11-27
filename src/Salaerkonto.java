@@ -10,13 +10,28 @@ public class Salaerkonto extends Bankkonto {
 	
 	/**
 	 * @param kontoinhaber der Inhaber des Kontos
+	 * @param ueberzugslimit das Ueberzugslimit in Franken
+	 */
+	public Salaerkonto(String kontoinhaber, double ueberzugslimit) {
+		super(kontoinhaber);
+		int ueberzugsLimitInRappen = frankenZuRappen(ueberzugslimit);
+		if (ueberzugsLimitInRappen <= 1000000 && ueberzugsLimitInRappen >= 0) {
+			this.ueberzugslimit = ueberzugsLimitInRappen;
+		} else {
+			this.ueberzugslimit = 0;
+		}
+		
+	}
+	
+	/**
+	 * @param kontoinhaber der Inhaber des Kontos
 	 * @param eroeffnungsbetrag die Ersteinzahlung beim erstellen des Kontos in Franken.
 	 * @param ueberzugslimit das Ueberzugslimit in Franken
 	 */
 	public Salaerkonto(String kontoinhaber, double eroeffnungsbetrag, double ueberzugslimit) {
 		super(kontoinhaber, eroeffnungsbetrag);
-		int ueberzugsLimitInRappen = aendereZuRappen(ueberzugslimit);
-		if (ueberzugsLimitInRappen <= 1000000) {
+		int ueberzugsLimitInRappen = frankenZuRappen(ueberzugslimit);
+		if (ueberzugsLimitInRappen <= 1000000 && ueberzugsLimitInRappen >= 0) {
 			this.ueberzugslimit = ueberzugsLimitInRappen;
 		} else {
 			this.ueberzugslimit = 0;
@@ -32,9 +47,11 @@ public class Salaerkonto extends Bankkonto {
 	 */
 	@Override
 	public void geldAbheben(double abzuhebenderbetrag) {
-		int abhebenInRappen = aendereZuRappen(abzuhebenderbetrag);
+		int abhebenInRappen = frankenZuRappen(abzuhebenderbetrag);
 		if ((getKontostand() - abhebenInRappen) < (0 - ueberzugslimit)) {
-			setKontostand(0 - ueberzugslimit); 
+			int bezugslimit = (getKontostand() + ueberzugslimit);
+			System.out.println("Sie dürfen nur " + bezugslimit + "CHF abheben.");
+			setKontostand(-ueberzugslimit); 
 		} else {
 			setKontostand(getKontostand() - abhebenInRappen);
 		}
@@ -43,7 +60,7 @@ public class Salaerkonto extends Bankkonto {
 	
 	@Override
 	public String ueberzugslimitAlsString() {
-		return ", Ueberzugslimite: " + aendereZuFranken(getUeberzugslimit());
+		return ", Ueberzugslimite: " + rappenZuFranken(getUeberzugslimit());
 	}
 
 	/**

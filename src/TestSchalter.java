@@ -27,15 +27,15 @@ public class TestSchalter {
 		Bankkonto konto9 = new Nummernkonto("Millionaer Bob", 1.5);
 		
 		//Es werden neue Bankkonten erstellt:
-		bankverwaltung.bankkontenErstellen(konto1);	
-		bankverwaltung.bankkontenErstellen(konto2);
-		bankverwaltung.bankkontenErstellen(konto3);
-		bankverwaltung.bankkontenErstellen(konto4);	
-		bankverwaltung.bankkontenErstellen(konto5);
-		bankverwaltung.bankkontenErstellen(konto6);
-		bankverwaltung.bankkontenErstellen(konto7);	
-		bankverwaltung.bankkontenErstellen(konto8);
-		bankverwaltung.bankkontenErstellen(konto9);
+		bankverwaltung.bankkontenHinzufuegen(konto1);	
+		bankverwaltung.bankkontenHinzufuegen(konto2);
+		bankverwaltung.bankkontenHinzufuegen(konto3);
+		bankverwaltung.bankkontenHinzufuegen(konto4);	
+		bankverwaltung.bankkontenHinzufuegen(konto5);
+		bankverwaltung.bankkontenHinzufuegen(konto6);
+		bankverwaltung.bankkontenHinzufuegen(konto7);	
+		bankverwaltung.bankkontenHinzufuegen(konto8);
+		bankverwaltung.bankkontenHinzufuegen(konto9);
 		
 		//Es finden diverse transaktionen statt:
 		konto1.geldAbheben(20000.0);
