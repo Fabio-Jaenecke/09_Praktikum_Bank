@@ -32,7 +32,7 @@ public class Bankverwaltung {
 	 */
 	public void bankkontenAusgeben() {
 		for (Bankkonto konto : bankkonten) {
-			System.out.println("Inhaber: " + konto.getInhaber() + ", Kontostand: " + konto.aendereZuFranken(konto.getKontostand()) + konto.ueberzugslimitAlsString());
+			System.out.println("Inhaber: " + konto.getInhaber() + ", Kontostand: " + konto.rappenZuFranken(konto.getKontostand()) + konto.ueberzugslimitAlsString());
 		} 
 	}
 }

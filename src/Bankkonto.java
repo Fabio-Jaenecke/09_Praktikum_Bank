@@ -18,7 +18,7 @@ public class Bankkonto {
 	 * @param eroeffnungsbetrag der Kontostand in Franken
 	 */
 	public Bankkonto(String kontoinhaber, double eroeffnungsbetrag) {
-		int eroeffnungsbetragInRappen = aendereZuRappen(eroeffnungsbetrag);
+		int eroeffnungsbetragInRappen = frankenZuRappen(eroeffnungsbetrag);
 		this.inhaber = kontoinhaber;
 		if (eroeffnungsbetragInRappen <= kontolimit) {
 			this.kontostand = eroeffnungsbetragInRappen;
@@ -33,7 +33,7 @@ public class Bankkonto {
 	 * @param einzahlungsbetrag der Betrag der eingezahlt wird
 	 */
 	public void geldEinzahlen(double einzahlungsbetrag) {
-		int einzahlungsbetragInRappen = aendereZuRappen(einzahlungsbetrag);
+		int einzahlungsbetragInRappen = frankenZuRappen(einzahlungsbetrag);
 		if ((kontostand + einzahlungsbetragInRappen) <= kontolimit) {
 			kontostand += einzahlungsbetragInRappen; 
 		} else {
@@ -42,13 +42,16 @@ public class Bankkonto {
 	}
 	
 	/**
-	 * Erlaubt das Abheben vom Konto. Sollte der abzuhebende Betrag unter 0 fallen, hat das Konto neu 0 Geld.
+	 * Erlaubt das Abheben vom Konto. Sollte der abzuhebende Betrag unter 0 fallen, wird nur die er-laubte Geldmenge abgehoben.
 	 * 
 	 * @param abzuhebenderbetrag
 	 */
 	public void geldAbheben(double abzuhebenderbetrag) {
-		int abhebenInRappen = aendereZuRappen(abzuhebenderbetrag);
+		int abhebenInRappen = frankenZuRappen(abzuhebenderbetrag);
 		if ((kontostand - abhebenInRappen) < 0) {
+			int minus = kontostand - abhebenInRappen;
+			int bezugslimit = abhebenInRappen + minus;
+			System.out.println("Sie dürfen nur " + bezugslimit + "CHF abheben.");
 			kontostand = 0; 
 		} else {
 			kontostand -= abhebenInRappen;
@@ -91,7 +94,7 @@ public class Bankkonto {
 	 * 
 	 * @param wert Geldbetrag in Rappen
 	 */
-	protected double aendereZuFranken(int wert) {
+	protected double rappenZuFranken(int wert) {
 		return (double) (wert / 100);
 	}
 	
@@ -100,7 +103,7 @@ public class Bankkonto {
 	 * 
 	 * @param wert Geldbetrag in Franken
 	 */
-	protected int aendereZuRappen(double wert) {
+	protected int frankenZuRappen(double wert) {
 		return (int) (wert * 100);
 	}
 	
