@@ -23,7 +23,7 @@ public class Bankverwaltung {
 	 * 
 	 * @param konto ein Bankkonto
 	 */
-	public void bankkontenErstellen(Bankkonto konto) {
+	public void bankkontenHinzufuegen(Bankkonto konto) {
 		bankkonten.add(konto);
 	}
 	
