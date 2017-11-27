@@ -45,6 +45,7 @@ public class Bankkonto {
 		if ((kontostand + einzahlungsbetragInRappen) <= kontolimit) {
 			kontostand += einzahlungsbetragInRappen; 
 		} else {
+			System.out.println(getInhaber() + ", Sie können maximal " + rappenZuFranken(kontolimit - kontostand) + " CHF einzahlen.");
 			kontostand = kontolimit;
 		}
 	}
@@ -57,7 +58,7 @@ public class Bankkonto {
 	public void geldAbheben(double abzuhebenderbetrag) {
 		int abhebenInRappen = frankenZuRappen(abzuhebenderbetrag);
 		if ((kontostand - abhebenInRappen) < 0) {
-			System.out.println("Sie dürfen nur " + kontostand + "CHF abheben.");
+			System.out.println(getInhaber() + ", Sie dürfen nur maximal " + rappenZuFranken(kontostand) + " CHF abheben.");
 			kontostand = 0; 
 		} else {
 			kontostand -= abhebenInRappen;

@@ -50,7 +50,7 @@ public class Salaerkonto extends Bankkonto {
 		int abhebenInRappen = frankenZuRappen(abzuhebenderbetrag);
 		if ((getKontostand() - abhebenInRappen) < (0 - ueberzugslimit)) {
 			int bezugslimit = (getKontostand() + ueberzugslimit);
-			System.out.println("Sie dürfen nur " + bezugslimit + "CHF abheben.");
+			System.out.println(getInhaber() + ", Sie dürfen nur maximal " + rappenZuFranken(bezugslimit) + " CHF abheben.");
 			setKontostand(-ueberzugslimit); 
 		} else {
 			setKontostand(getKontostand() - abhebenInRappen);
