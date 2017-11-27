@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Diese Klasse verwaltet die Bankkonten
  * 
- * @author fabio jaenecke
+ * @author fabio jaenecke & daniellerch
  * @version 1.0
  *
  */
