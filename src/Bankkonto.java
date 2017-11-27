@@ -15,6 +15,14 @@ public class Bankkonto {
 	
 	/**
 	 * @param kontoinhaber der Kontoinhaber
+	 */
+	public Bankkonto(String kontoinhaber) {
+		kontostand = 0;
+		this.inhaber = kontoinhaber;
+	}
+	
+	/**
+	 * @param kontoinhaber der Kontoinhaber
 	 * @param eroeffnungsbetrag der Kontostand in Franken
 	 */
 	public Bankkonto(String kontoinhaber, double eroeffnungsbetrag) {
