@@ -57,9 +57,7 @@ public class Bankkonto {
 	public void geldAbheben(double abzuhebenderbetrag) {
 		int abhebenInRappen = frankenZuRappen(abzuhebenderbetrag);
 		if ((kontostand - abhebenInRappen) < 0) {
-			int minus = kontostand - abhebenInRappen;
-			int bezugslimit = abhebenInRappen + minus;
-			System.out.println("Sie dürfen nur " + bezugslimit + "CHF abheben.");
+			System.out.println("Sie dürfen nur " + kontostand + "CHF abheben.");
 			kontostand = 0; 
 		} else {
 			kontostand -= abhebenInRappen;
