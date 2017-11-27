@@ -10,6 +10,21 @@ public class Salaerkonto extends Bankkonto {
 	
 	/**
 	 * @param kontoinhaber der Inhaber des Kontos
+	 * @param ueberzugslimit das Ueberzugslimit in Franken
+	 */
+	public Salaerkonto(String kontoinhaber, double ueberzugslimit) {
+		super(kontoinhaber);
+		int ueberzugsLimitInRappen = frankenZuRappen(ueberzugslimit);
+		if (ueberzugsLimitInRappen <= 1000000 && ueberzugsLimitInRappen >= 0) {
+			this.ueberzugslimit = ueberzugsLimitInRappen;
+		} else {
+			this.ueberzugslimit = 0;
+		}
+		
+	}
+	
+	/**
+	 * @param kontoinhaber der Inhaber des Kontos
 	 * @param eroeffnungsbetrag die Ersteinzahlung beim erstellen des Kontos in Franken.
 	 * @param ueberzugslimit das Ueberzugslimit in Franken
 	 */
