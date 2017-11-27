@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Diese Klasse verwaltet die Bankkonten
  * 
  * @author fabio jaenecke & daniellerch
- * @version 1.0
+ * @version 1.1
  *
  */
 public class Bankverwaltung {

@@ -5,7 +5,7 @@
  * Der Kontostand und das Kontolimit sind in Rappen gespeichert.
  * 
  * @author fabio jaenecke & daniellerch
- * @version 1.0
+ * @version 1.1
  *
  */
 public class Bankkonto {

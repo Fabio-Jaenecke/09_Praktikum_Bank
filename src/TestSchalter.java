@@ -4,7 +4,7 @@
  * Diese Klasse ermöglicht die Interaktion mit der Bankverwaltung und repräsentiert dadurch einen Bankschalter.
  * 
  * @author fabio jaenecke
- * @version 1.0
+ * @version 1.1
  *  *
  */
 public class TestSchalter {
